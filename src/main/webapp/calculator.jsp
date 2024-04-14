@@ -12,9 +12,11 @@
     <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <%--    <link href="/assects/css/slimselect.css" rel="stylesheet">--%>
 <%--    <script src="/assects/js/slimselect.min.js"></script>--%>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/slim-select@latest/dist/slimselect.min.js"></script>
+    <link href="https://unpkg.com/slim-select@latest/dist/slimselect.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -30,7 +32,7 @@
             </div>
 
             <div class="mb-3 w-25">
-                <select class="form-select" aria-label="Default select example" name="operation" id="operation" required>
+                <select aria-label="Default select example" name="operation" id="operation" required>
                     <option value="" selected>Open this select menu</option>
                     <option value="add">Додавання</option>
                     <option value="subtract">Віднімання</option>
@@ -79,9 +81,9 @@
         </c:if>
     </div>
     <script>
-        // new SlimSelect({
-        //     select: '#operation'
-        // })
+        new SlimSelect({
+            select: '#operation'
+        })
         $(document).click(() => {
             $('#success').css('display', 'none');
             $('#warning').css('display', 'none');
